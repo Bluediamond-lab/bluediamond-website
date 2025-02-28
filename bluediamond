@@ -1,0 +1,146 @@
+/BlueDiamondWebsite
+│── index.html  (Main Page)
+│── style.css   (Styling)
+│── script.js   (JavaScript for interactive elements)
+│── assets/     (Logos, banners, icons)
+│── countdown.html  (Launch countdown page)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue Diamond (BLD) Token</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <img src="assets/logo.png" alt="Blue Diamond Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#tokenomics">Tokenomics</a></li>
+                <li><a href="#roadmap">Roadmap</a></li>
+                <li><a href="countdown.html">Launch Countdown</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Blue Diamond (BLD) Token</h1>
+        <p>The Future of Deflationary Crypto - Secure, Transparent, and Rewarding</p>
+        <a href="https://uniswap.org" class="btn">Buy on Uniswap</a>
+    </section>
+
+    <section id="about">
+        <h2>About Blue Diamond</h2>
+        <p>Blue Diamond (BLD) is an ERC-20 token designed to provide deflationary value, staking rewards, and long-term sustainability.</p>
+    </section>
+
+    <section id="tokenomics">
+        <h2>Tokenomics</h2>
+        <p>Total Supply: 5,000,000,000 BLD</p>
+        <p>Burn Rate: 0.5% per transaction, 5% quarterly</p>
+        <p>Liquidity Locked & Staking Rewards Available</p>
+    </section>
+
+    <section id="roadmap">
+        <h2>Roadmap</h2>
+        <p>Q1 2024 - Token Deployment & Liquidity</p>
+        <p>Q2 2024 - Exchange Listings & Marketing Campaign</p>
+        <p>Q3 2024 - Community Staking & Institutional Adoption</p>
+    </section>
+
+    <footer>
+        <p>© 2024 Blue Diamond (BLD) Token | <a href="https://twitter.com/bluediamondcoin">Follow us on Twitter</a></p>
+    </footer>
+</body>
+</html>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: white;
+    text-align: center;
+    margin: 0;
+}
+header {
+    background-color: #1e1e1e;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    width: 120px;
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+nav ul li a {
+    color: #00aaff;
+    text-decoration: none;
+}
+.hero {
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #0044cc, #00aaff);
+}
+.hero h1 {
+    font-size: 2.5em;
+}
+.hero .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ffcc00;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+section {
+    padding: 50px 20px;
+}
+footer {
+    background-color: #1e1e1e;
+    padding: 10px;
+    margin-top: 20px;
+}
+// Add more interactivity (e.g., countdown, pop-ups) if needed
+console.log("Blue Diamond (BLD) Website Loaded Successfully!");
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLD Token Countdown</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Blue Diamond (BLD) Token Launch Countdown</h1>
+        <p>Get ready for the official launch of BLD! Secure your future with staking, liquidity, and rewards.</p>
+        <h2>Launching In:</h2>
+        <p id="countdown"></p>
+    </div>
+
+    <script>
+        var launchDate = new Date("March 30, 2024 12:00:00").getTime();
+        var countdownFunction = setInterval(function() {
+            var now = new Date().getTime();
+            var timeLeft = launchDate - now;
+            var days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+            document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+            if (timeLeft < 0) {
+                clearInterval(countdownFunction);
+                document.getElementById("countdown").innerHTML = "Blue Diamond (BLD) is Now Live!";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
